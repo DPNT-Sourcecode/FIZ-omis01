@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BeFaster.App.Solutions.FIZ;
+using NUnit.Framework;
 
 namespace BeFaster.App.Tests.Solutions.FIZ
 {
-    class FizzBuzzSolutionTest
+    [TestFixture]
+    public class FizzBuzzSolutionTest
     {
+        [TestCase(3, ExpectedResult = "fizz")]
+        public string TestFizz(int suppliedNumber)
+        {
+
+        }
     }
 }
