@@ -67,29 +67,30 @@ namespace BeFaster.App.Solutions.FIZ
                                                 string numberAsString,
                                                 string suppliedResult)
         {
-            var result = string.Empty;
+            var deluxeResult = string.Empty;
 
             if (number > 10 && AllDigitsTheSame(numberAsString))
             {
                 if (number % 2 != 0)
                 {
-                    result = "fake deluxe";
+                    deluxeResult = "fake deluxe";
                 }
                 else
                 {
-                    result = "deluxe";
+                    deluxeResult = "deluxe";
                 }
             }
 
-            if (suppliedResult != string.Empty)
+            if (suppliedResult != string.Empty && deluxeResult != string.Empty)
             {
-                return suppliedResult + " " + result;
+                return suppliedResult + " " + deluxeResult;
             }
 
-            return suppliedResult + result;
+            return suppliedResult + deluxeResult;
         }
     }
 }
+
 
 
 
