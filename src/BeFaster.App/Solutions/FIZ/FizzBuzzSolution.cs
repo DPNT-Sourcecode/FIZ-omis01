@@ -23,6 +23,10 @@ namespace BeFaster.App.Solutions.FIZ
                         result = "fizz buzz";
                     }
                 }
+                else if (number > 10 && AllDigitsTheSame(numberAsString))
+                {
+                    result = "fizz deluxe";
+                }
                 else
                 {
                     result = "fizz";
@@ -70,4 +74,5 @@ namespace BeFaster.App.Solutions.FIZ
         }
     }
 }
+
 
