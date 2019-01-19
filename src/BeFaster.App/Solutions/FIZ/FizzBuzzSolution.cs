@@ -72,5 +72,28 @@ namespace BeFaster.App.Solutions.FIZ
 
             return result;
         }
+
+        private static string ApplyDeluxeRule(
+                                                int number,
+                                                string numberAsString,
+                                                string suppliedResult)
+        {
+            var result = string.Empty;
+
+            if (number > 10 && AllDigitsTheSame(numberAsString))
+            {
+                if (number % 2 != 0)
+                {
+                    result = " fake deluxe";
+                }
+                else
+                {
+                    result = " deluxe";
+                }
+            }
+
+            return suppliedResult + result;
+        }
     }
 }
+
