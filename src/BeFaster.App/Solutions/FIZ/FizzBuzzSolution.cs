@@ -17,13 +17,9 @@ namespace BeFaster.App.Solutions.FIZ
                 if (BuzzTest(number, numberAsString))
                 {
                     result += " buzz";
+                }
 
-                    result = ApplyDeluxeRule(number, numberAsString, result);
-                }
-                else
-                {
-                    result = ApplyDeluxeRule(number, numberAsString, result);
-                }
+                result = ApplyDeluxeRule(number, numberAsString, result);
             }
             else if (BuzzTest(number, numberAsString))
             {
@@ -51,7 +47,7 @@ namespace BeFaster.App.Solutions.FIZ
         {
             var deluxeResult = string.Empty;
 
-            if (number % 3 == 0 && numberAsString.Contains("3") &&
+            if (number % 3 == 0 && numberAsString.Contains("3") ||
                 number % 5 == 0 && numberAsString.Contains("5"))
             {
                 if (number % 2 != 0)
@@ -97,5 +93,6 @@ namespace BeFaster.App.Solutions.FIZ
         }
     }
 }
+
 
 
