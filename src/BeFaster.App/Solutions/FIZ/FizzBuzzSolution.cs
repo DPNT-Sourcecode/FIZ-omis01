@@ -44,24 +44,6 @@ namespace BeFaster.App.Solutions.FIZ
             return result;
         }
 
-        private static bool AllDigitsTheSame(string testString)
-        {
-            var result = true;
-
-            var firstDigit = Convert.ToChar(testString.Substring(0, 1));
-
-            foreach (var check in testString)
-            {
-                if (check != firstDigit)
-                {
-                    result = false;
-                    break;
-                }
-            }
-
-            return result;
-        }
-
         private static string ApplyDeluxeRule(
                                                 int number,
                                                 string numberAsString,
@@ -69,13 +51,17 @@ namespace BeFaster.App.Solutions.FIZ
         {
             var deluxeResult = string.Empty;
 
-            if (number % 2 != 0)
+            if (number % 3 == 0 && numberAsString.Contains("3") &&
+                number % 5 == 0 && numberAsString.Contains("5"))
             {
-                deluxeResult = "fake deluxe";
-            }
-            else
-            {
-                deluxeResult = "deluxe";
+                if (number % 2 != 0)
+                {
+                    deluxeResult = "fake deluxe";
+                }
+                else
+                {
+                    deluxeResult = "deluxe";
+                }
             }
 
             if (suppliedResult != string.Empty && deluxeResult != string.Empty)
@@ -111,4 +97,5 @@ namespace BeFaster.App.Solutions.FIZ
         }
     }
 }
+
 
