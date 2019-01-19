@@ -4,17 +4,17 @@ using System;
 namespace BeFaster.App.Solutions.FIZ
 {
     public static class FizzBuzzSolution
-    {        
+    {
         public static string FizzBuzz(int number)
         {
             var result = string.Empty;
             var numberAsString = number.ToString();
 
-            if (number % 3 == 0 || numberAsString.Contains("3"))
+            if (FizzTest(number, numberAsString))
             {
                 result = "fizz";
 
-                if (number % 5 == 0 || numberAsString.Contains("5"))
+                if (BuzzTest(number, numberAsString))
                 {
                     result += " buzz";
 
@@ -25,7 +25,7 @@ namespace BeFaster.App.Solutions.FIZ
                     result = ApplyDeluxeRule(number, numberAsString, result);
                 }
             }
-            else if (number % 5 == 0 || numberAsString.Contains("5"))
+            else if (BuzzTest(number, numberAsString))
             {
                 result = "buzz";
 
@@ -50,7 +50,7 @@ namespace BeFaster.App.Solutions.FIZ
 
             var firstDigit = Convert.ToChar(testString.Substring(0, 1));
 
-            foreach(var check in testString)
+            foreach (var check in testString)
             {
                 if (check != firstDigit)
                 {
@@ -69,16 +69,13 @@ namespace BeFaster.App.Solutions.FIZ
         {
             var deluxeResult = string.Empty;
 
-            if (number > 10 && AllDigitsTheSame(numberAsString))
+            if (number % 2 != 0)
             {
-                if (number % 2 != 0)
-                {
-                    deluxeResult = "fake deluxe";
-                }
-                else
-                {
-                    deluxeResult = "deluxe";
-                }
+                deluxeResult = "fake deluxe";
+            }
+            else
+            {
+                deluxeResult = "deluxe";
             }
 
             if (suppliedResult != string.Empty && deluxeResult != string.Empty)
@@ -88,5 +85,30 @@ namespace BeFaster.App.Solutions.FIZ
 
             return suppliedResult + deluxeResult;
         }
+
+        private static bool BuzzTest(
+                                                int number,
+                                                string numberAsString)
+        {
+            if (number % 5 == 0 || numberAsString.Contains("5"))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private static bool FizzTest(
+                                                int number,
+                                                string numberAsString)
+        {
+            if (number % 3 == 0 || numberAsString.Contains("3"))
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }
+
