@@ -12,44 +12,33 @@ namespace BeFaster.App.Solutions.FIZ
 
             if (number % 3 == 0 || numberAsString.Contains("3"))
             {
+                result = "fizz";
+
                 if (number % 5 == 0 || numberAsString.Contains("5"))
                 {
-                    if (number > 10 && AllDigitsTheSame(numberAsString))
-                    {
-                        result = "fizz buzz deluxe";
-                    }
-                    else
-                    {
-                        result = "fizz buzz";
-                    }
-                }
-                else if (number > 10 && AllDigitsTheSame(numberAsString))
-                {
-                    result = "fizz deluxe";
+                    result += " buzz";
+
+                    result = ApplyDeluxeRule(number, numberAsString, result);
                 }
                 else
                 {
-                    result = "fizz";
+                    result = ApplyDeluxeRule(number, numberAsString, result);
                 }
             }
             else if (number % 5 == 0 || numberAsString.Contains("5"))
             {
-                if (number > 10 && AllDigitsTheSame(numberAsString))
-                {
-                    result = "buzz deluxe";
-                }
-                else
-                {
-                    result = "buzz";
-                }
-            }
-            else if (number > 10 && AllDigitsTheSame(numberAsString))
-            {
-                result = "deluxe";
+                result = "buzz";
+
+                result = ApplyDeluxeRule(number, numberAsString, result);
             }
             else
             {
-                result = number.ToString();
+                result = ApplyDeluxeRule(number, numberAsString, result);
+
+                if (result == string.Empty)
+                {
+                    result = number.ToString();
+                }
             }
 
             return result;
@@ -96,4 +85,5 @@ namespace BeFaster.App.Solutions.FIZ
         }
     }
 }
+
 
