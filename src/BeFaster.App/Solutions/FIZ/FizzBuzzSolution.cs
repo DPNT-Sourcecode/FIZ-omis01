@@ -7,10 +7,11 @@ namespace BeFaster.App.Solutions.FIZ
         public static string FizzBuzz(int number)
         {
             var result = string.Empty;
+            var numberAsString = number.ToString();
 
-            if (number % 3 == 0)
+            if (number % 3 == 0 || numberAsString.Contains("3"))
             {
-                if (number % 5 == 0)
+                if (number % 5 == 0 || numberAsString.Contains("5"))
                 {
                     result = "fizz buzz";
                 }
@@ -19,7 +20,7 @@ namespace BeFaster.App.Solutions.FIZ
                     result = "fizz";
                 }
             }
-            else if (number % 5 == 0)
+            else if (number % 5 == 0 || numberAsString.Contains("5"))
             {
                 result = "buzz";
             }
@@ -32,4 +33,5 @@ namespace BeFaster.App.Solutions.FIZ
         }
     }
 }
+
 
