@@ -67,4 +67,3 @@ namespace BeFaster.App.Tests.Solutions.FIZ
         }
     }
 }
-
