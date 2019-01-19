@@ -9,7 +9,8 @@ namespace BeFaster.App.Tests.Solutions.FIZ
         [TestCase(3, ExpectedResult = "fizz")]
         public string TestFizz(int suppliedNumber)
         {
-
+            return FizzBuzzSolution.FizzBuzz(suppliedNumber);
         }
     }
 }
+
