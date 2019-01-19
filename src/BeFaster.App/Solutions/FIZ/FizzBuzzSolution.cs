@@ -1,9 +1,10 @@
 ﻿using BeFaster.Runner.Exceptions;
+using System;
 
 namespace BeFaster.App.Solutions.FIZ
 {
     public static class FizzBuzzSolution
-    {
+    {        
         public static string FizzBuzz(int number)
         {
             var result = string.Empty;
@@ -13,7 +14,14 @@ namespace BeFaster.App.Solutions.FIZ
             {
                 if (number % 5 == 0 || numberAsString.Contains("5"))
                 {
-                    result = "fizz buzz";
+                    if (number > 10 && AllDigitsTheSame(numberAsString))
+                    {
+                        result = "fizz buzz deluxe";
+                    }
+                    else
+                    {
+                        result = "fizz buzz";
+                    }
                 }
                 else
                 {
@@ -22,7 +30,18 @@ namespace BeFaster.App.Solutions.FIZ
             }
             else if (number % 5 == 0 || numberAsString.Contains("5"))
             {
-                result = "buzz";
+                if (number > 10 && AllDigitsTheSame(numberAsString))
+                {
+                    result = "buzz deluxe";
+                }
+                else
+                {
+                    result = "buzz";
+                }
+            }
+            else if (number > 10 && AllDigitsTheSame(numberAsString))
+            {
+                result = "deluxe";
             }
             else
             {
@@ -31,5 +50,24 @@ namespace BeFaster.App.Solutions.FIZ
 
             return result;
         }
+
+        private static bool AllDigitsTheSame(string testString)
+        {
+            var result = true;
+
+            var firstDigit = Convert.ToChar(testString.Substring(0, 1));
+
+            foreach(var check in testString)
+            {
+                if (check != firstDigit)
+                {
+                    result = false;
+                    break;
+                }
+            }
+
+            return result;
+        }
     }
 }
+
