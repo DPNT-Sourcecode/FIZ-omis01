@@ -13,5 +13,11 @@ namespace BeFaster.App.Tests.Solutions.HLO
         {
             return HelloSolution.Hello(message);
         }
+
+        [TestCase("John", ExpectedResult = "Hello, John!")]
+        public string TestMessageTwo(string name)
+        {
+            return HelloSolution.HelloTwo(name);
+        }
     }
 }
