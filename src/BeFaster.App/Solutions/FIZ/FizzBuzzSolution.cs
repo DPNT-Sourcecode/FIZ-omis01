@@ -12,10 +12,13 @@ namespace BeFaster.App.Solutions.FIZ
             {
                 case 3:
                     result = "fizz";
+                default:
+
             }
 
             return result;
         }
     }
 }
+
 
