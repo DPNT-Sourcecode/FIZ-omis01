@@ -18,6 +18,12 @@ namespace BeFaster.App.Tests.Solutions.FIZ
             return FizzBuzzSolution.FizzBuzz(suppliedNumber);
         }
 
+        [TestCase(13, ExpectedResult = "fizz")]
+        public string TestFizzThree(int suppliedNumber)
+        {
+            return FizzBuzzSolution.FizzBuzz(suppliedNumber);
+        }
+
         [TestCase(5, ExpectedResult = "buzz")]
         public string TestBuzzOne(int suppliedNumber)
         {
