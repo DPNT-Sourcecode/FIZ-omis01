@@ -6,7 +6,7 @@ namespace BeFaster.App.Tests.Solutions.HLO
     [TestFixture]
     public class HelloSolutionTest
     {
-        private const string testMessage = "Hello to the world";
+        private const string testMessage = "Hello, World!";
         [TestCase(testMessage, ExpectedResult = testMessage)]
         public string TestMessage(string message)
         {
@@ -14,3 +14,4 @@ namespace BeFaster.App.Tests.Solutions.HLO
         }
     }
 }
+
