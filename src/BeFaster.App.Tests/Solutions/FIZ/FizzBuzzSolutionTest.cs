@@ -6,7 +6,7 @@ namespace BeFaster.App.Tests.Solutions.FIZ
     [TestFixture]
     public class FizzBuzzSolutionTest
     {
-        [TestCase(3, ExpectedResult = "fizz fake deluxe")]
+        [TestCase(3, ExpectedResult = "fizz")]
         public string TestFizzOne(int suppliedNumber)
         {
             return FizzBuzzSolution.FizzBuzz(suppliedNumber);
@@ -24,7 +24,7 @@ namespace BeFaster.App.Tests.Solutions.FIZ
             return FizzBuzzSolution.FizzBuzz(suppliedNumber);
         }
 
-        [TestCase(5, ExpectedResult = "buzz fake deluxe")]
+        [TestCase(5, ExpectedResult = "buzz")]
         public string TestBuzzOne(int suppliedNumber)
         {
             return FizzBuzzSolution.FizzBuzz(suppliedNumber);
@@ -36,7 +36,7 @@ namespace BeFaster.App.Tests.Solutions.FIZ
             return FizzBuzzSolution.FizzBuzz(suppliedNumber);
         }
 
-        [TestCase(15, ExpectedResult = "fizz buzz fake deluxe")]
+        [TestCase(15, ExpectedResult = "fizz buzz")]
         public string TestFizzBuzz(int suppliedNumber)
         {
             return FizzBuzzSolution.FizzBuzz(suppliedNumber);
@@ -48,7 +48,7 @@ namespace BeFaster.App.Tests.Solutions.FIZ
             return FizzBuzzSolution.FizzBuzz(suppliedNumber);
         }
 
-        [TestCase(33, ExpectedResult = "fizz fake deluxe")]
+        [TestCase(33, ExpectedResult = "fizz")]
         public string TestFizzDeluxeOne(int suppliedNumber)
         {
             return FizzBuzzSolution.FizzBuzz(suppliedNumber);
