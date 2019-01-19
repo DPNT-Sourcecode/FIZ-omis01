@@ -8,15 +8,28 @@ namespace BeFaster.App.Solutions.FIZ
         {
             var result = string.Empty;
 
-            switch (number)
+            if (number % 3 == 0)
             {
-                case 3:
+                if (number % 5 == 0)
+                {
+                    result = "fizz buzz";
+                }
+                else
+                {
                     result = "fizz";
-                default:
-
+                }
+            }
+            else if (number % 5 == 0)
+            {
+                result = "buzz";
+            }
+            else
+            {
+                result = number.ToString();
             }
 
             return result;
         }
     }
 }
+
