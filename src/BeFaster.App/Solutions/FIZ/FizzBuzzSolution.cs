@@ -73,17 +73,23 @@ namespace BeFaster.App.Solutions.FIZ
             {
                 if (number % 2 != 0)
                 {
-                    result = " fake deluxe";
+                    result = "fake deluxe";
                 }
                 else
                 {
-                    result = " deluxe";
+                    result = "deluxe";
                 }
+            }
+
+            if (suppliedResult != string.Empty)
+            {
+                return suppliedResult + " " + result;
             }
 
             return suppliedResult + result;
         }
     }
 }
+
 
 
